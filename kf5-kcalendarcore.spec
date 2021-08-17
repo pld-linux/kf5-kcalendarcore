@@ -1,14 +1,14 @@
-%define		kdeframever	5.84
+%define		kdeframever	5.85
 %define		qtver		5.9.0
 %define		kfname		kcalendarcore
 Summary:	kcalendarcore
 Name:		kf5-%{kfname}
-Version:	5.84.0
+Version:	5.85.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	15e9b12e778f202b4d8c784eeb6be180
+# Source0-md5:	eaee772562d93a2752547c09427679cc
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -85,3 +85,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/kcalcore_version.h
 %{_includedir}/KF5/KCalendarCore
 %{_includedir}/KF5/kcalendarcore_version.h
+%{_pkgconfigdir}/KF5CalendarCore.pc
