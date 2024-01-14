@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.113
+%define		kdeframever	5.114
 %define		qtver		5.15.2
 %define		kfname		kcalendarcore
 Summary:	kcalendarcore
 Name:		kf5-%{kfname}
-Version:	5.113.0
+Version:	5.114.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	a0e98fee032e1b462a4b0a302b10f15b
+# Source0-md5:	6ef50d901056eeac28911c3f226aa710
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
