@@ -1,26 +1,26 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.249.0
+%define		kdeframever	5.114
 %define		qtver		5.15.2
 %define		kfname		kcalendarcore
 Summary:	kcalendarcore
 Name:		kf5-%{kfname}
-Version:	5.249.0
-Release:	0.1
+Version:	5.114.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	0d8ca6054e4fd3193f920781a6771e94
+Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
+# Source0-md5:	6ef50d901056eeac28911c3f226aa710
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6Gui-devel
-BuildRequires:	Qt6Test-devel >= 5.9.0
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5Test-devel >= 5.9.0
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
 BuildRequires:	libical-devel >= 2.0
 BuildRequires:	ninja
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -80,14 +80,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libKF6CalendarCore.so.6
-%attr(755,root,root) %{_libdir}/libKF6CalendarCore.so.5.*.*
-%{_datadir}/qlogging-categories6/kcalendarcore.categories
-%{_datadir}/qlogging-categories6/kcalendarcore.renamecategories
+%ghost %{_libdir}/libKF5CalendarCore.so.5
+%attr(755,root,root) %{_libdir}/libKF5CalendarCore.so.5.*.*
+%{_datadir}/qlogging-categories5/kcalendarcore.categories
+%{_datadir}/qlogging-categories5/kcalendarcore.renamecategories
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/cmake/KF6CalendarCore
-%{_libdir}/libKF6CalendarCore.so
-%{_includedir}/KF6/KCalendarCore
-%{_pkgconfigdir}/KF6CalendarCore.pc
+%{_libdir}/cmake/KF5CalendarCore
+%{_libdir}/libKF5CalendarCore.so
+%{_libdir}/qt5/mkspecs/modules/qt_KCalendarCore.pri
+%{_includedir}/KF5/kcalcore_version.h
+%{_includedir}/KF5/KCalendarCore
+%{_pkgconfigdir}/KF5CalendarCore.pc
